@@ -1,6 +1,7 @@
 import { EventEmitter } from "@angular/core";
 import { Ingredient } from "../shared/ingredient.model";
 import { Recipe } from "./recipe.model";
+import { Subject } from 'rxjs';
 
 export class RecipeService{
     private AllRecipes: Recipe[] = [
@@ -13,8 +14,6 @@ export class RecipeService{
             new Ingredient('Bread', 6),
         ])
     ];
-
-    recipeSelected = new EventEmitter<Recipe>();
 
     getRecipes(){
         return this.AllRecipes.slice(); // slice() returns a copy of the array
